@@ -1,6 +1,6 @@
 {
   "name": "svelte-barcode-kit",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "author": "Sean Velasco <seanvelasco@ieee.org>",
   "description": "",
   "homepage": "https://github.com/seanvelasco/barcode-kit#readme",
@@ -22,6 +22,9 @@
     "build": "svelte-package --input ./src"
   },
   "license": "ISC",
+  "dependencies": {
+		"@zxing/library": "^0.20.0"
+	},
   "peerDependencies": {
 		"svelte": "^4.0.0"
 	},
@@ -34,7 +37,7 @@
 	"files": [
 		"dist"
 	],
-  "main": "index.js",
+  "main": "./dist/index.js",
   "svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
   "type": "module"
