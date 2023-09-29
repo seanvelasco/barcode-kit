@@ -1,5 +1,5 @@
 import BarcodeReader from './BarcodeReader.svelte'
-import type { BarcodeEvent } from './BarcodeReader.svelte'
+import type { BarcodeEvent } from '../types'
 
 export {
     BarcodeReader
