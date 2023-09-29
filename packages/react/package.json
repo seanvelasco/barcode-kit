@@ -1,11 +1,37 @@
 {
-  "name": "react",
+  "name": "react-barcode-kit",
   "version": "1.0.0",
+  "author": "Sean Velasco <seanvelasco@ieee.org>",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "homepage": "https://github.com/seanvelasco/barcode-kit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanvelasco/barcode-kit.git"
   },
-  "author": "",
-  "license": "ISC"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "react",
+    "barcode",
+    "qrcode",
+    "zxing",
+    "jsbarcode"
+  ],
+  
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+		"react": "^18.2.0",
+    "react-dom": "^18.2.0"
+	},
+  "files": [
+		"dist"
+	],
+  "main": "index.js",
+  "svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+  "type": "module"
 }
