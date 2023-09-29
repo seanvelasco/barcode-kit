@@ -19,7 +19,7 @@
     "jsbarcode"
   ],
   "scripts": {
-    "build": "svelte-package --input ./src --output ./dist --types true"
+    "build": "svelte-package --input ./src"
   },
   "license": "ISC",
   "peerDependencies": {

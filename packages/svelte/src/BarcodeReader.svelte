@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte'
 	import { BrowserMultiFormatReader, BarcodeFormat } from '@zxing/library'
-	import type { BarcodeEvent } from './../types'
+	import type { BarcodeEvent } from '.'
 
 	export let onScan: (event: BarcodeEvent) => void
 

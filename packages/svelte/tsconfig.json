@@ -15,17 +15,9 @@
 		"module": "ESNext",
 		"target": "ESNext",
 		"ignoreDeprecations": "5.0",
-        "paths": {
-			"$lib": [
-				"./src/"
-			],
-			"$lib/*": [
-				"./src/*"
-			]
-		},
+		"outDir": "./dist",
         "rootDirs": [
-			".",
-			"./types"
+			"."
 		],
 	},
     "include": [

@@ -1,5 +1,10 @@
 import BarcodeReader from './BarcodeReader.svelte'
-import type { BarcodeEvent } from '../types'
+
+interface BarcodeEvent {
+    text: string
+    format: string
+    timestamp: number
+}
 
 export {
     BarcodeReader
