@@ -1,0 +1,40 @@
+{
+  "name": "svelte-barcode-kit",
+  "version": "0.0.7",
+  "author": "Sean Velasco <seanvelasco@ieee.org>",
+  "description": "",
+  "homepage": "https://github.com/seanvelasco/barcode-kit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanvelasco/barcode-kit.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "svelte",
+    "barcode",
+    "qr",
+    "zxing",
+    "jsbarcode"
+  ],
+  "scripts": {
+    "build": "svelte-package --input ./src --output ./dist --types true"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+		"svelte": "^4.0.0"
+	},
+  "exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist"
+	],
+  "svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+  "type": "module"
+}

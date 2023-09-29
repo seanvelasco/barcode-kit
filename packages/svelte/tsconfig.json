@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"module": "ESNext",
+		"target": "ESNext",
+		"baseUrl": ".",
+		"outDir": "./dist"
+	},
+	"include": ["**/*", "../../index.d.ts", "../../index.js"],
+	"exclude": ["./dist", "./.svelte-kit"]
+}
+
+
+
+		
