@@ -1,8 +1,8 @@
 {
   "name": "react-barcode-kit",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Sean Velasco <seanvelasco@ieee.org>",
-  "description": "",
+  "description": "Read and generate barcodes and QR codes in React",
   "homepage": "https://github.com/seanvelasco/barcode-kit#readme",
   "repository": {
     "type": "git",
@@ -23,15 +23,17 @@
     "build": "tsc && vite build"
   },
   "license": "ISC",
+  "dependencies": {
+		"@zxing/library": "^0.20.0"
+	},
   "peerDependencies": {
-		"react": "^18.2.0",
-    "react-dom": "^18.2.0"
+		"react": "^17.0.0",
+    "react-dom": "^17.0.0"
 	},
   "files": [
 		"dist"
 	],
-  "main": "index.js",
-  "svelte": "./dist/index.js",
+  "main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
   "type": "module"
 }

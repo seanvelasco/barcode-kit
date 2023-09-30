@@ -2,7 +2,7 @@
   "name": "svelte-barcode-kit",
   "version": "0.0.9",
   "author": "Sean Velasco <seanvelasco@ieee.org>",
-  "description": "",
+  "description": "Read and generate barcodes and QR codes in Svelte ",
   "homepage": "https://github.com/seanvelasco/barcode-kit#readme",
   "repository": {
     "type": "git",
