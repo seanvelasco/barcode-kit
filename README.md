@@ -2,16 +2,6 @@
 
 Read and generate barcodes and QR codes in React and Svelte.
 
-#### Svelte
-![npm](https://img.shields.io/npm/v/svelte-barcode-kit?style=flat-square)
-![gzip size](https://img.badgesize.io/https://unpkg.com/svelte-barcode-kit/dist?compression=gzip&label=gzip%20size&style=flat-square)
-![npm](https://img.shields.io/npm/dt/svelte-barcode-kit?style=flat-square)
-
-#### React
-![npm](https://img.shields.io/npm/v/react-barcode-kit?style=flat-square)
-![gzip size](https://img.badgesize.io/https://unpkg.com/react-barcode-kit/dist?compression=gzip&label=gzip%20size&style=flat-square)
-![npm](https://img.shields.io/npm/dt/react-barcode-kit?style=flat-square)
-
 ## Features
 
 - Read barcodes and QR codes from a webcam or camera
@@ -108,10 +98,5 @@ export default App
 
 - [zxing](https://github.com/zxing-js/library)
 - [JsBarcode](https://github.com/lindell/JsBarcode)
-
-## FAQ
-
-
-
 
 ## License

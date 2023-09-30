@@ -16,7 +16,9 @@
     "barcode",
     "qrcode",
     "zxing",
-    "jsbarcode"
+    "jsbarcode",
+    "frontend",
+    "front-end"
   ],
   "scripts": {
     "build": "svelte-package --input ./src"
