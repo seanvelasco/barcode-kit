@@ -1,6 +1,7 @@
 {
   "namespace": "barcode-kit",
   "repository": "https://github.com/seanvelasco/barcode-kit",
+  "description": "Read and generate barcodes and QR codes in React",
   "private": true,
   "workspaces": [
     "./packages/svelte",
