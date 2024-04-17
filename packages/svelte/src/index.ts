@@ -6,10 +6,5 @@ interface BarcodeEvent {
     timestamp: number
 }
 
-export {
-    BarcodeReader
-}
+export { BarcodeReader, type BarcodeEvent }
 
-export type {
-    BarcodeEvent
-}

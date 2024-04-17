@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte'
+	import { writable } from 'svelte/store'
 	import { BrowserMultiFormatReader, BarcodeFormat } from '@zxing/library'
 	import type { BarcodeEvent } from '.'
 
-	export let onScan: (event: BarcodeEvent) => void
+	export const barcode = writable<BarcodeEvent>()
 
 	const codeReader = new BrowserMultiFormatReader()
 
@@ -13,26 +14,17 @@
 		const [defaultVideoSource] = await codeReader.listVideoInputDevices()
 		await codeReader.decodeFromVideoDevice(defaultVideoSource.deviceId, videoElement, (result) => {
 			if (result) {
-				const event = {
+				barcode.set({
 					text: result.getText(),
 					format: BarcodeFormat[result.getBarcodeFormat()],
 					timestamp: result.getTimestamp()
-				}
-				onScan(event)
+				})
 			}
 		})
 	}
 
-	const cleanup = () => {
-		codeReader.reset()
-	}
-
-	const preventDefaultContextMenu = (event: Event) => {
-		event.preventDefault()
-	}
-
 	onMount(scan)
-	onDestroy(cleanup)
+	onDestroy(() => codeReader.reset())
 </script>
 
 <video
@@ -46,7 +38,7 @@
 	style={$$props.style}
 	width={$$props.width}
 	height={$$props.height}
-	on:contextmenu={preventDefaultContextMenu}
+	on:contextmenu={(event) => event.preventDefault()}
 />
 
 <style>

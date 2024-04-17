@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react"
-import type { CSSProperties } from "react"
+import { useEffect, useRef, type CSSProperties } from "react"
 import { BrowserMultiFormatReader, BarcodeFormat } from "@zxing/library"
 
-interface BarcodeEvent {
+export interface BarcodeEvent {
 	text: string
 	format: string
 	timestamp: number
@@ -20,16 +19,16 @@ const BarcodeReader: React.FC<BarcodeReaderProps> = ({ onScan, ...rest }) => {
 	const videoElementRef = useRef<HTMLVideoElement>(null)
 
 	useEffect(() => {
-		const codeReader = new BrowserMultiFormatReader()
+		const reader = new BrowserMultiFormatReader()
 		let isCancelled = false
 
-		const scan = async () => {
+		async () => {
 			const [defaultVideoSource] =
-				await codeReader.listVideoInputDevices()
+				await reader.listVideoInputDevices()
 
 			if (isCancelled || !videoElementRef) return
 
-			await codeReader.decodeFromVideoDevice(
+			await reader.decodeFromVideoDevice(
 				defaultVideoSource.deviceId,
 				videoElementRef.current,
 				(result) => {
@@ -44,14 +43,10 @@ const BarcodeReader: React.FC<BarcodeReaderProps> = ({ onScan, ...rest }) => {
 			)
 		}
 
-		const cleanup = () => {
+		return () => {
 			isCancelled = true
-			codeReader.reset()
+			reader.reset()
 		}
-
-		scan()
-
-		return cleanup
 	}, [onScan])
 
 	return (
@@ -62,9 +57,11 @@ const BarcodeReader: React.FC<BarcodeReaderProps> = ({ onScan, ...rest }) => {
 			muted={true}
 			playsInline={true}
 			disablePictureInPicture={true}
+			className={rest.className}
+			style={{ transform: "rotateY(180deg)", ...rest.style }}
+			width={rest.width}
+			height={rest.height}
 			onContextMenu={(event) => event.preventDefault()}
-			style={{ transform: "rotateY(180deg)" }}
-			{...rest}
 		/>
 	)
 }
